@@ -1,0 +1,25 @@
+== ODF Command Line Tools (OCLT)
+
+A ruby gem which provides a DSL for the Apache ODF Toolkit.
+
+The language is implemented in ruby and is available on the JVM via
+jruby.
+
+== dependencies
+
+* {odftoolkit}[http://incubator.apache.org/odftoolkit/index.html]
+
+* {apache-xerces (required by odftoolkit's SimpleAPI)}[http://xerces.apache.org]
+
+* {jruby}[http://www.jruby.org]
+
+== testing
+
+The following CLASSPATH is required, along with the symbolic links I have made in ./jars:
+
+    % CLASSPATH=./jars/xml-apis.jar:./jars/odfdom-java.jar:./jars/simple-odf.jar:./jars/xercesImpl.jar jruby lib/oclt.rb
+
+    % java -version
+    java version "1.7.0_03-icedtea"
+    OpenJDK Runtime Environment (IcedTea7 2.1) (ArchLinux build 7.b147_2.1-3-i686)
+    OpenJDK Client VM (build 22.0-b10, mixed mode)
