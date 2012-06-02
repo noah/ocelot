@@ -11,4 +11,4 @@ doc.add_paragraph(%{eos
 
 doc.save("/tmp/test.odt")
 
-puts "Wrote new odf document."
+puts "Wrote new odf document to /tmp/test.odt."
