@@ -1,10 +1,10 @@
 #!/bin/sh
 
-if [[ ! -d ./jars ]]; then
+if [ ! -d ./jars ]; then
 
   echo "Downloading jars"
   mkdir -p ./jars
-  pushd ./jars
+  cd ./jars
 
   wget  http://mirrors.gigenet.com/apache//xerces/j/binaries/Xerces-J-bin.2.11.0.tar.gz\
         http://apache.osuosl.org/incubator/odftoolkit/binaries/odftoolkit-0.5-incubating-bin.tar.gz
@@ -14,7 +14,7 @@ if [[ ! -d ./jars ]]; then
     tar zxf $targz 
   done
 
-  popd
+  cd ..
 fi
 
 echo "Running test"
