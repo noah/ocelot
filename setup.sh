@@ -17,8 +17,10 @@ if [ ! -d ./jars ]; then
   cd ..
 fi
 
-echo "Running test"
-
 JAVA_HOME="$(dirname $(dirname $(readlink -f $(which java))))"
-echo "set JAVA_HOME to $JAVA_HOME"
-CLASSPATH=./jars/xerces-2_11_0/xercesImpl.jar:./jars/xerces-2_11_0/xml-apis.jar:./jars/odftoolkit-0.5-incubating/simple-odf-0.7-incubating.jar:./jars/odftoolkit-0.5-incubating/odfdom-java-0.8.8-incubating.jar jruby lib/oclt.rb
+export JAVA_HOME=$JAVA_HOME; echo "set JAVA_HOME to $JAVA_HOME"
+
+basedir=$(readlink -f ./jars)
+
+CLASSPATH=$basedir/xerces-2_11_0/xercesImpl.jar:$basedir/xerces-2_11_0/xml-apis.jar:$basedir/odftoolkit-0.5-incubating/simple-odf-0.7-incubating.jar:$basedir/odftoolkit-0.5-incubating/odfdom-java-0.8.8-incubating.jar
+export CLASSPATH=$CLASSPATH; echo "set CLASSPATH to $CLASSPATH"
