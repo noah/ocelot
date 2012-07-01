@@ -1,6 +1,9 @@
 # TODO
 #
-# * In the above load() block, it would be nice to be able to nest
+# * We need a universal installer
+# * Code needs to be tested for cross-platform compatibility.
+#
+# * In the load() block, it would be nice to be able to nest
 #   blocks.  For example:
 #
 # Text.load("somefile.odt") do
