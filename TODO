@@ -1,0 +1,24 @@
+# TODO
+#
+# * In the above load() block, it would be nice to be able to nest
+#   blocks.  For example:
+#
+# Text.load("somefile.odt") do
+#   
+#   change_mode ... 
+#   
+#   add_para(...) |para|
+#       para.this
+#       para.that
+#   end
+#    
+#   # note that here we have the implicit context provided by
+#   instance_eval and a local block variable |para|
+#
+#   table = Table do
+#       name "mytable" # not sure whether this is possible with instance_eval
+#   end
+#
+# end
+#
+# * Better error checking / debugging
