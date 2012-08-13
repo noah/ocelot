@@ -34,7 +34,7 @@ module OCLT
       self.get_item i
     end
 
-    def push el
+    def << el
       if el.class == Array
         el.each{|elt| self.add_item elt.to_s }
       else
@@ -42,13 +42,20 @@ module OCLT
       end
     end
 
+    alias_method :append, :<<
+
     def []= idx, elt
-      self.set(idx, elt)
+      self.set(idx, elt.to_s.to_java(:String))
     end
 
     def delete_at idx
       self.remove_item(idx)
     end
+
+    def length
+      self.size
+    end
+
   end
 
 end

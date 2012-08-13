@@ -15,35 +15,30 @@ module OCLT
   end
 
   # ODF Presentation document type
-  class Presentation
+  class Presentation < Doc
 
-    def self.load(path, *args, &block)
-      begin
-        path = path[-4..-1] != ".odp" ? "#{path}.odp" : path
-        @doc = PresentationDocument.load_document(path)
-      rescue java.io.FileNotFoundException
-        puts "#{path} does not exist."
-        exit -1
-      end
-      block.arity < 1 ? @doc.instance_eval(&block) : block.call(@doc)
-      self
-    end
-
-    # create a presentation
+    # Create a presentation document
     def self.create(path, *args, &block)
-      path = path[-4..-1] != ".odp" ? "#{path}.odp" : path
-      @doc = PresentationDocument.new_presentation_document(*args)
+      path = super path, ".odp", proc { PresentationDocument.new_presentation_document }
       block.arity < 1 ? @doc.instance_eval(&block) : block.call(@doc)
       @doc.save(path)
     end
 
+    # Load an existing presentation document
+    def self.load(path, *args, &block)
+      path = super path, ".odp", PresentationDocument
+      block.arity < 1 ? @doc.instance_eval(&block) : block.call(@doc)
+      self
+    end
+
+    # Add a new slide to the the current presentation
     def self.slide text
       @doc.new_slide(@doc.get_slide_count, text, SlideLayout::TITLE_PLUS_TEXT)
     end
 
     def self.slides
-      puts block_given? ? "yes" : "no"
-      @doc.get_slides
+      #@doc.get_slides
+      []
     end
 
     # def self.mode_toggle
