@@ -1,0 +1,47 @@
+= OCeLoT (odf toolkit command line tools)
+
+{<img src="http://farm8.staticflickr.com/7199/6902123831_e457d34a23_n.jpg" width="320" height="213" alt="Ocelot (good)"/>}[http://www.flickr.com/photos/danielepaccaloni/6902123831/]
+
+== About
+
+* An {internal Domain-Specific Language}[http://martinfowler.com/bliki/InternalDslStyle.html] for the {Apache ODF Toolkit}[http://incubator.apache.org/odftoolkit/index.html]; specifically the ODF Toolkit's {Simple API}[http://incubator.apache.org/odftoolkit/simple/index.html].  Written in jruby.
+
+* The central idea is to provide a simple idiomatic ruby syntax for performing common ODF tasks.  Take a look at the {examples}[https://github.com/noah/ocelot/blob/master/examples] to get an idea of what ocelot can do.
+
+== Getting Started
+
+=== Installation
+
+1. {Install java}[http://www.java.com/en/download/help/download_options.xml]
+2. {Install jruby}[http://www.jruby.org/getting-started]
+3. <tt>git clone https://github.com/noah/ocelot.git</tt>
+
+=== Hello, World
+
+To test your installation, do the following:
+
+    % cd ocelot
+    % java -jar ocelot.jar examples/hello.rb
+
+If everything worked, you should have a shiny new file,
+<tt>hello.odf</tt>, with a very special message inside.
+
+== Development
+
+Like most jruby projects, <tt>ocelot</tt> uses a combination of ruby
+code and java jars.  To build the executable ocelot.jar, do the
+following from the top level directory:
+
+    % gem install warble
+    % rm -f ocelot.jar; warble
+
+Please report any bugs on the {issue
+tracker}[https://github.com/noah/ocelot/issues] or {email
+me}[mailto:noahktilton@gmail.com];  pull requests / patches welcome.
+
+== Acknowledgements
+
+This project is the product of my participation in the 2012 Google
+Summer of Code program.  Thanks to Google for paying me to write open
+source software, and to the Apache Foundation--particularly my mentor
+Rob Weir--for the experience.
