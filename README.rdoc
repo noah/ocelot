@@ -28,7 +28,7 @@ If everything worked, you should have a shiny new file,
 
 == Documentation
 
-Read the friendly {yardoc}[].
+Read the friendly {yardoc}[http://noah.github.com/ocelot/].
 
 The examples should give a pretty good idea of what this library is
 capable of, although for the sake of simplicity they represent only a
