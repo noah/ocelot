@@ -42,4 +42,9 @@ def usage
 end
 
 # Evaluate the input file
-ARGV[0].nil ? usage : require ARGV[0]
+ocelot_script = ARGV[0]
+if ocelot_script.nil?
+  usage
+else
+  require ocelot_script
+end
