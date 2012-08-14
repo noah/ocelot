@@ -11,6 +11,7 @@ $:.unshift File.expand_path(File.dirname(__FILE__))
 
 module OCLT
   version_file = File.expand_path(File.dirname(__FILE__) + "/../VERSION")
+  # The current version number
   VERSION      = File.read(version_file).strip
 end
 

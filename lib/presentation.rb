@@ -36,15 +36,10 @@ module OCLT
       @doc.new_slide(@doc.get_slide_count, text, SlideLayout::TITLE_PLUS_TEXT)
     end
 
+    # return the list of slides (iterator)
     def self.slides
-      #@doc.get_slides
-      []
+      @doc.get_slides
     end
-
-    # def self.mode_toggle
-    #   puts @doc.get_media_type_string
-    #   @doc.change_mode(OdfMediaType::PRESENTATION_TEMPLATE)
-    # end
 
   end
 
