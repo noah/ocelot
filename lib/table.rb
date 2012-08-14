@@ -1,2 +1,2 @@
-module OCLT
+module OCELOT
 end

@@ -1,6 +1,6 @@
 # ODF Command Line Tools
 #
-module OCLT
+module OCELOT
 
   # Methods shared by the various doc types
   class Doc

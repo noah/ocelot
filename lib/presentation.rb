@@ -1,11 +1,11 @@
-module OCLT
+module OCELOT
 
   Java::OrgOdftoolkitSimple::PresentationDocument.class_eval do
 
     # look up an execution path for an undefined method
     def method_missing(name, *args, &block)
-      if OCLT::Presentation.respond_to? name
-        OCLT::Presentation.send name, *args, &block
+      if OCELOT::Presentation.respond_to? name
+        OCELOT::Presentation.send name, *args, &block
       else
         # Set some mappings on a case-by-case basis
         puts "Not implemented: `#{self.class} -> #{name}`"

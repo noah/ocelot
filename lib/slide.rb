@@ -1,4 +1,4 @@
-module OCLT
+module OCELOT
 
   Java::OrgOdftoolkitSimplePresentation::Slide.class_eval do
 
