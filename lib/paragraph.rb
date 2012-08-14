@@ -60,11 +60,7 @@ module OCELOT
 
     # Add a comment (annotation) to the beginning of a paragraph
     def comment str
-<<<<<<< HEAD
-      self.add_comment("This is a paragraph comment for the paragraph", "OCLT Commenter");
-=======
       self.add_comment("This is a paragraph comment for the paragraph", "OCELOT Commenter");
->>>>>>> gh-pages
     end
 
     # Whether the current paragraph is a heading
