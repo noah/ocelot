@@ -43,6 +43,12 @@ Text::create "doc-test" do
   # add_section method?
 end
 
+# Print the entire document as a text file
+Text::load "doc-test" do
+  # note: overriding to_s doesn't work here
+  puts self.to_str
+end
+
 # List stuff
 #
 #  note: .odt suffix is optional
@@ -81,40 +87,4 @@ Text::load "doc-test" do
 
   puts "after deletion\n"
   puts l
-end
-
-# Presentation tests
-Presentation::create "pres-test" do
-  # create individual slides
-  slide "1"
-  slide "2"
-  slide "3"
-  slide "4"
-
-  # iterate over slides
-  slides.each do |slide|
-    puts "#{slide.index} => #{slide.name}"
-  end
-end
-
-# Table tests 
-Text::create "table-test" do
-
-  # Creates a row-major 3x4 table named "my-table".  The coords are
-  # optional
-  line_break 5
-
-  # create a 1x1 table
-  table "my-table"
-
-  page_break
-
-  # create a 3x4 table
-  table "my-table-sized", 3, 4 
-end
-
-# Print the entire document as a text file
-Text::load "doc-test" do
-  # note: overriding to_s doesn't work here
-  puts self.to_str
 end
