@@ -9,7 +9,7 @@
 
 $:.unshift File.expand_path(File.dirname(__FILE__))
 
-module OCELOT
+module OCLT
   version_file = File.expand_path(File.dirname(__FILE__) + "/../VERSION")
   VERSION      = File.read(version_file).strip
 end

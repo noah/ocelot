@@ -19,7 +19,7 @@ module OCLT
 
     # Create a text document
     def self.create(path, *args, &block)
-      path = super path, ".odt", lambda { TextDocument.new_text_document }
+      path = super path, ".odt", proc { TextDocument.new_text_document }
       block.arity < 1 ? @doc.instance_eval(&block) : block.call(@doc)
       @doc.save(path)
     end
