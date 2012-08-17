@@ -5,10 +5,11 @@
 # 
 errors=0
 for example in ./examples/*.rb; do
-    java -jar ocelot.jar $example
-    if [ $? -ne 0 ]; then
-      let "errors += 1"
-    fi
+  echo "testing $(basename $example) ... "
+  java -jar ocelot.jar $example > /dev/null
+  if [ $? -ne 0 ]; then
+    let "errors += 1"
+  fi
 done
 
 if [ $errors -gt 0 ]; then
