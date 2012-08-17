@@ -3,19 +3,6 @@ module OCELOT
   # The general idea here is to map OCELOT methods => ODF Simple API
   # methods See http://ruby-doc.org/core-1.9.3/Module.html#method-i-class_eval
 
-  Java::OrgOdftoolkitSimple::Component.class_eval do
-    # Prints paragraph text without need to call separate function
-    # Works for Paragraphs, might need to do some inspection for other
-    # types.
-    def to_s()
-      if self.class == Java::OrgOdftoolkitSimpleText::Header
-        puts self.toString
-      else
-        self.get_text_content()
-      end
-    end
-  end
-
   Java::OrgOdftoolkitSimpleText::Paragraph.class_eval do
 
     # meta-methods for paragraph alignment
