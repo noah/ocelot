@@ -21,6 +21,7 @@ require "java"
 # N.B.: '$' delimiter means java ENUM: http://jira.codehaus.org/browse/JRUBY-6092
 %w[ 
   java.net.URI
+  org.odftoolkit.simple.SpreadsheetDocument
   org.odftoolkit.simple.PresentationDocument
   org.odftoolkit.simple.Component
   org.odftoolkit.simple.table.Table
