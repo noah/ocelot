@@ -17,7 +17,10 @@ end
   doc
   text
   presentation
+  spreadsheet
   paragraph
   slide
+  table
   list
+  component
 ].each {|file| require file }
