@@ -16,4 +16,5 @@ if [ $errors -gt 0 ]; then
   echo "! $errors tests FAILED :("
 else
   echo "+ All tests PASSED :)"
+  rm -fv *.ods *.odt *.odp
 fi
